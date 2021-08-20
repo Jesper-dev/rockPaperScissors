@@ -12,48 +12,39 @@ export const createOutcome = (
   return outcome;
 };
 
+export const createBotOption = () => {
+  let optionList: Array<string> = ["rock", "paper", "scissor"];
+  let num = Math.floor(Math.random() * 3);
+  let botOption = optionList[num];
+  return botOption;
+};
+
 export const outcomeFunc = (outcome: string) => {
   switch (outcome) {
+    case "":
+      return "";
     /* ROCK STARTS HERE */
     case "rock vs paper":
-      console.log("You lose");
-      break;
+      return "You lose";
 
     case "rock vs scissor":
-      console.log("You win");
-      break;
-
-    case "rock vs rock":
-      console.log("Tie");
-      break;
+      return "You win";
     /* ROCK ENDS HERE */
     /* PAPER STARTS HERE */
     case "paper vs rock":
-      console.log("You win");
-      break;
+      return "You win";
 
     case "paper vs scissor":
-      console.log("You lose");
-      break;
-
-    case "paper vs paper":
-      console.log("Tie");
-      break;
+      return "You lose";
     /* PAPER ENDS HERE */
     /* SCISSOR STARTS HERE */
     case "scissor vs rock":
-      console.log("You lose");
-      break;
+      return "You lose";
 
     case "scissor vs paper":
-      console.log("You win");
-      break;
-
-    case "scissor vs scissor":
-      console.log("Tie");
-      break;
+      return "You win";
     /* SCISSOR ENDS HERE */
     default:
-      break;
+      return "Tie";
   }
 };
