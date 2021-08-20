@@ -1,10 +1,11 @@
 import React from "react";
 import "./styles/_main.sass";
+import { Game } from "./pages/Game";
 
 function App() {
   return (
     <main>
-      <h1>Hello</h1>
+      <Game />
     </main>
   );
 }
