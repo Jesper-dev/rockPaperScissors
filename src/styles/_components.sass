@@ -1,1 +1,50 @@
 //everything that is reusable – buttons, navbars, cards, and so on
+@use './_base' as var
+
+.gameBoard
+    @include var.flex-column
+    width: 50%
+    height: 50vh
+    border: 1px solid black
+
+    .optionBox
+        @include var.flex-row
+        justify-content: space-between
+        // border: 1px solid black
+        width: 70%
+        height: 30%
+        button
+            background: none
+            border: 1px solid black
+            padding: 8px 16px
+            font-size: 4rem
+            cursor: pointer
+    .resultBox
+        @include var.flex-column
+        font-size: 2rem
+
+.loadingBox
+    @include var.flex-row
+    justify-content: space-around
+    padding: 8px
+    // width: 200px
+    height: 50px
+    animation: loadingBox 1s infinite
+    span
+        width: 30px
+        height: 30px
+        border: 1px solid black
+        border-radius: 50%
+
+@keyframes loadingBox
+    0%
+        width: 100px
+
+    50%
+        width: 120px
+
+    60%
+        width: 90px
+
+    100%
+        width: 100px
